@@ -15,7 +15,7 @@
         <div class="logo-top"></div>
         <div id="nav">
             <ul>
-                <li @(((ViewBag.pageName != null && ((string)ViewBag.pageName).Equals("Main"))) ? "id=current" : string.Empty)><a href="/home">Главная</a></li>
+                <li @(((ViewBag.pageName != null && ((string)ViewBag.pageName).Equals("Main"))) ? "id=current" : string.Empty)><a href="/">Главная</a></li>
                 <li @(((ViewBag.pageName != null && ((string)ViewBag.pageName).Equals("News"))) ? "id=current" : string.Empty)><a href="/news">Новости</a></li>
                 <li @(((ViewBag.pageName != null && ((string)ViewBag.pageName).Equals("Audio"))) ? "id=current" : string.Empty)><a href="/audio">Треки</a></li>
                 <li @(((ViewBag.pageName != null && ((string)ViewBag.pageName).Equals("Video"))) ? "id=current" : string.Empty)><a href="/video"><div>Видео</div></a></li>
@@ -31,7 +31,7 @@
     </div>
     <div id="footer">
         <div class="footer-inner">
-            <a href="/home">главная</a>
+            <a href="/">главная</a>
             <a href="/news">новости</a>
             <a href="/audio">треки</a>
             <a href="/video">видео</a>

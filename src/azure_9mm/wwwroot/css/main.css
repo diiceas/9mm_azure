@@ -118,7 +118,7 @@ body{
 }
 
 .logo-top{
-    background-image: url("/content/images/logo.png");
+    background-image: url("../images/logo.png");
     height: 124px;
     width: 254px;
     transform: rotate(-40deg) scale(3, 3);

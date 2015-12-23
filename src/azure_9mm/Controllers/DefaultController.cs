@@ -59,7 +59,7 @@ namespace razor_9mm.Controllers
         public ActionResult Gallery()
         {
             string basepath = _appEnvironment.ApplicationBasePath;
-            string[] files = System.IO.Directory.EnumerateFiles(basepath + @"\wwwroot\images\9mm_orig\").Select(path => new FileInfo(path).Name).ToArray();
+            string[] files = System.IO.Directory.EnumerateFiles(@"images\9mm_orig\").Select(path => new FileInfo(path).Name).ToArray();
             ViewBag.files = files;
             ViewBag.pageName = "Gallery";
             return View();
