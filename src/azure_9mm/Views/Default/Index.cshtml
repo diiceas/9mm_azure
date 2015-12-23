@@ -1,0 +1,45 @@
+﻿@section Title{| "http://9mm.by"}
+
+@section Meta{
+	<link rel="image_src" href="http://i.imgur.com/9wpsKPT.png">
+}
+
+<div class="content-inner home" >
+    <div class="logo-center"><div></div></div>
+    <div class="nav">
+        <img style="width: 610px;" src="~/images/mainpage/arrows.png" />
+        <div id="images" style="width:350px; height:500px; position:absolute; left:130px; top:143px;">
+            <div style="position: absolute; left:-3000px;top:0px;">
+                <img src="~/images/mainpage/music.png" />
+                <img src="~/images/mainpage/movie.png" />
+                <img src="~/images/mainpage/text.png" />
+                <img src="~/images/mainpage/photo.png" />
+            </div>
+            <a href="/audio">
+                <img alt="Музло" class="imgMain" style="border: 0 none; float: left; left: 8px; position: relative; top: -7px;" src="~/images/mainpage/music_bw.png" />
+            </a>
+            <a href="/video">
+                <img class="imgMain" style="border: 0 none;float: right;height: 130px;left: -45px;position: relative;top: -15px;" src="~/images/mainpage/movie_bw.png" />
+            </a>
+            <a href="/gallery">
+                <img class="imgMain" style="border: 0 none; float: left; left: -28px; position: relative; top: 5px;" src="~/images/mainpage/photo_bw.png" />
+            </a>
+            <a href="/news">
+                <img class="imgMain" style="border: 0 none; float: right; left: 25px; margin-top: 20px; position: relative; top: -18px;" src="~/images/mainpage/text_bw.png" />
+            </a>
+            <a href="/info">
+                <img class="imgMain" style="border: 0 none; left: 29px; position: relative; top: 1px;" src="~/images/mainpage/band_bw.png" />
+            </a>
+        </div>
+    </div>
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script>
+        $('.imgMain').mouseover(function () {
+            this.src = this.src.replace('_bw.png', '.png');
+        });
+
+        $('.imgMain').mouseout(function () {
+            this.src = this.src.replace('.png', '_bw.png');
+        });
+    </script>
+</div>

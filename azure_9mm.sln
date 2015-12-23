@@ -12,6 +12,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "azure_9mm", "src\azure_9mm\azure_9mm.xproj", "{2AF238D8-7826-4FC6-9522-E8ABE88D917C}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{E71258C9-7A8D-49B3-997C-8B47097BDFDE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{6238CF19-6873-4777-889F-955D81295C80}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1 = PublishScripts\Scripts\Deploy-AzureResourceGroup.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{0D5EEBCA-4F03-4250-81FB-C0C8C02D1FBB}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Templates\azure9mm.json = PublishScripts\Templates\azure9mm.json
+		PublishScripts\Templates\azure9mm.param.dev.json = PublishScripts\Templates\azure9mm.param.dev.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -28,5 +41,7 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{2AF238D8-7826-4FC6-9522-E8ABE88D917C} = {5E67F825-7292-4003-98F1-EAE90928C79B}
+		{6238CF19-6873-4777-889F-955D81295C80} = {E71258C9-7A8D-49B3-997C-8B47097BDFDE}
+		{0D5EEBCA-4F03-4250-81FB-C0C8C02D1FBB} = {E71258C9-7A8D-49B3-997C-8B47097BDFDE}
 	EndGlobalSection
 EndGlobal
