@@ -1,69 +1,57 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>@ViewData["Title"] - azure_9mm</title>
-
-        <environment names="Development">
-            <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-            <link rel="stylesheet" href="~/css/site.css" />
-        </environment>
-        <environment names="Staging,Production">
-            <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/css/bootstrap.min.css"
-                  asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-                  asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-            <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-        </environment>
-        @Html.ApplicationInsightsJavaScript(TelemetryConfiguration)
-    </head>
-    <body>
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">azure_9mm</a>
-                </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a asp-controller="Home" asp-action="Index">Home</a></li>
-                        <li><a asp-controller="Home" asp-action="About">About</a></li>
-                        <li><a asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    </ul>
-                    @await Html.PartialAsync("_LoginPartial")
-                </div>
-            </div>
+<head>
+    <meta charset="utf-8">
+    @RenderSection("Meta", required: false)
+    <title>
+        Девятый миллиметр @RenderSection("Title", required: false)
+    </title>
+    <link rel="stylesheet" href="~/css/main.css" type="text/css" />
+    @RenderSection("Styles", required: false)
+    @RenderSection("Scripts", required: false)
+</head>
+<body>
+    <div id="header" class="clearfix">
+        <div class="logo-top"></div>
+        <div id="nav">
+            <ul>
+                <li @(((ViewBag.pageName != null && ((string)ViewBag.pageName).Equals("Main"))) ? "id=current" : string.Empty)><a href="/home">Главная</a></li>
+                <li @(((ViewBag.pageName != null && ((string)ViewBag.pageName).Equals("News"))) ? "id=current" : string.Empty)><a href="/news">Новости</a></li>
+                <li @(((ViewBag.pageName != null && ((string)ViewBag.pageName).Equals("Audio"))) ? "id=current" : string.Empty)><a href="/audio">Треки</a></li>
+                <li @(((ViewBag.pageName != null && ((string)ViewBag.pageName).Equals("Video"))) ? "id=current" : string.Empty)><a href="/video"><div>Видео</div></a></li>
+                <li @(((ViewBag.pageName != null && ((string)ViewBag.pageName).Equals("Gallery"))) ? "id=current" : string.Empty)><a href="/gallery">Фото</a></li>
+                <li @(((ViewBag.pageName != null && ((string)ViewBag.pageName).Equals("Info"))) ? "id=current" : string.Empty)><a href="/info">Инфо</a></li>
+            </ul>
         </div>
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; 2015 - azure_9mm</p>
-            </footer>
+    </div>
+    <div id="content">
+        <div class="frame-border border-left"></div>
+        <div class="frame-border border-top"></div>
+        @RenderBody()
+    </div>
+    <div id="footer">
+        <div class="footer-inner">
+            <a href="/home">главная</a>
+            <a href="/news">новости</a>
+            <a href="/audio">треки</a>
+            <a href="/video">видео</a>
+            <a href="/gallery">фото</a>
+            <a href="/info">инфо</a>
+            <span style=" color: black">© Девятый миллиметр 2015</span>
+            <a target="blank" href="http://vkontakte.ru/ninthmillimeter">vk</a>
+            <a href="mailto:ninthmillimeter@gmail.com">почта</a>
         </div>
-
-        <environment names="Development">
-            <script src="~/lib/jquery/dist/jquery.js"></script>
-            <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-            <script src="~/js/site.js" asp-append-version="true"></script>
-        </environment>
-        <environment names="Staging,Production">
-            <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.1.4.min.js"
-                    asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                    asp-fallback-test="window.jQuery">
-            </script>
-            <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.5/bootstrap.min.js"
-                    asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                    asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal">
-            </script>
-            <script src="~/js/site.min.js" asp-append-version="true"></script>
-        </environment>
-
-        @RenderSection("scripts", required: false)
-    </body>
+        <div class="logo-bottom"><div></div></div>
+    </div>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-53061003-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
 </html>

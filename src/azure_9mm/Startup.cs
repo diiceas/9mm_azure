@@ -106,7 +106,37 @@ namespace azure_9mm
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Default}/{action=Index}/{id?}");
+
+                routes.MapRoute(
+                    "Audio",
+                    "audio",
+                    new { controller = "Default", action = "Audio" }
+                );
+
+                routes.MapRoute(
+                    "Video",
+                    "video",
+                    new { controller = "Default", action = "Video" }
+                );
+
+                routes.MapRoute(
+                    "Gallery",
+                    "gallery",
+                    new { controller = "Default", action = "Gallery" }
+                );
+
+                routes.MapRoute(
+                    "Info",
+                    "info",
+                    new { controller = "Default", action = "Info" }
+                );
+
+                routes.MapRoute(
+                    "News",
+                    "news",
+                    new { controller = "Default", action = "News" }
+                );
             });
         }
 
