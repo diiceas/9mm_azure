@@ -308,7 +308,6 @@ p:first-of-type {
 /***********************=Responsive*****************************/
 @media (max-width:1165px) {
     #header #nav {
-        margin-left: 430px;
         margin-right: 0px;
         float: left;
     }
